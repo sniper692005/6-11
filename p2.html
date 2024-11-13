@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        div,p{
+            border: 5px solid black;
+            font-size: 20pt;
+            padding: 20px 50px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            console.log($('p').parent())
+            $('p').parent().css({
+
+            })
+            console.log($('p').parents())
+            $('p').parents().css({
+                'color':'red',
+                'border':'solid green 2px'
+            })
+            console.log($('p').parentsUntil('#great-grandparent'))
+        })
+    </script>
+</head>
+<body>
+    <div id="great-great-grandparent">
+        great-great-grandparent
+        <div id="great-grandparent">
+            great-grandparent
+            <div id="grandparent">
+                grandparent
+                <div id="parent">
+                    parent
+                    <p>Text inside me</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
